@@ -32,11 +32,15 @@ Users should be able to:
 
 ### Screenshot
 
+<div align="center">
+
 ![Desktop](./assets/Screenshots/design-desktop.png)
 ![Mobile](./assets/Screenshots/design-mobile.png)
 ![Empty Field Error](./assets/Screenshots/empty-field-error.png)
 ![Invalid Day Error](./assets/Screenshots/invalid-day-error.png)
 ![Invalid Field Error](./assets/Screenshots/invalid-field-error.png)
+
+</div>
 
 ### Links
 
