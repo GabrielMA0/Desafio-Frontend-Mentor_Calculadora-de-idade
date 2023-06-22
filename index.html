@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age calculator app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <div class="background">
+            <section class="items">
+                <div class="text-labels">
+                    <label class="text-label-day">DAY</label>
+                    <label class="text-labels-month">MONTH</label>
+                    <label class="text-labels-year">YEAR</label>
+                </div>
+                <div class="fields">
+                    <input class="input-day" type="text" maxlength="2" placeholder="DD">  
+                    <input class="input-month" type="text" maxlength="2" placeholder="MM"> 
+                    <input class="input-year" type="text" maxlength="4" placeholder="YYYY">
+                    <div class="message-empty-field error">
+                        <p class="message-empty-field-day hide">This field is required</p>
+                        <p class="message-empty-field-month hide">This field is required</p>
+                        <p class="message-empty-field-year hide">This field is required</p>
+                    </div>
+                    <div class="message-error2 error">
+                        <p class="message-error-day hide">Must be a valid day</p>
+                        <p class="message-error-month hide">Must be a valid month</p>
+                        <p class="message-error-year hide">Must be a valid year</p>
+                    </div>
+                    <div class="message-error3 error hide">
+                        <p>Must be a valid date</p>
+                    </div>
+                </div>
+                
+                <div class="line-btn">
+                    <div class="line"></div>
+                    <button id="btn-calculate" onclick="calculateAge()"><img src="./assets/Símbolo-sem-circulo.svg" alt="button calculate"></button>
+                    <div class="line hide-line"></div>
+                </div>
+            </section>
+            <section>
+                <div class="result">
+                    <h2><span id="years">--</span>years</h2>
+                    <h2><span id="months">--</span>months</h2>
+                    <h2><span id="days">--</span>days</h2>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
