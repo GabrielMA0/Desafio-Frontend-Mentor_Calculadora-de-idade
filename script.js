@@ -103,22 +103,28 @@ function calculateAge() {
     const valueInputMonths = inputMonthElement.value;
     const valueInputYears = inputYearElement.value;
 
-    // CONDIÇÕES TERNARIAS PARA OS NÚMEROS NÃO SAIREM NEGATIVOS
-    let ageInYears = currentYear - valueInputYears;
-    let ageInDay =
-        valueInputDays > currentDay
-            ? valueInputDays - currentDay
-            : currentDay - valueInputDays;
-    let ageInMonth =
-        valueInputMonths > currentMonth
-            ? valueInputMonths - currentMonth
-            : currentMonth - valueInputMonths;
-
     const userDate = new Date(
         valueInputYears,
         valueInputMonths - 1,
         valueInputDays
     );
+
+    // CONDIÇÕES TERNARIAS PARA OS NÚMEROS NÃO SAIREM NEGATIVOS
+    let ageInYears = date.getFullYear() - userDate.getFullYear();
+    let ageInDay = date.getDate() - userDate.getDate();
+    let ageInMonth = date.getMonth() - userDate.getMonth();
+
+    let newDate = date - userDate;
+    let novadata = new Date(newDate);
+
+    if (ageInMonth < 0 || (ageInMonth === 0 && ageInDay < 0)) {
+        ageInYears--;
+        ageInMonth += 12;
+
+        if (valueInputDays > currentDay) {
+            ageInDay = userDate.getDate() - date.getDate();
+        }
+    }
 
     handleFieldValidation(
         valueInputDays,
