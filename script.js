@@ -111,19 +111,25 @@ function calculateAge() {
 
     // CONDIÇÕES TERNARIAS PARA OS NÚMEROS NÃO SAIREM NEGATIVOS
     let ageInYears = date.getFullYear() - userDate.getFullYear();
-    let ageInDay = date.getDate() - userDate.getDate();
     let ageInMonth = date.getMonth() - userDate.getMonth();
-
-    let newDate = date - userDate;
-    let novadata = new Date(newDate);
+    let ageInDay =
+        userDate.getDate() > currentDay
+            ? userDate.getDate() - currentDay
+            : currentDay - userDate.getDate();
 
     if (ageInMonth < 0 || (ageInMonth === 0 && ageInDay < 0)) {
         ageInYears--;
         ageInMonth += 12;
+    }
 
-        if (valueInputDays > currentDay) {
-            ageInDay = userDate.getDate() - date.getDate();
-        }
+    if (ageInDay < 0) {
+        const ultimoDiaMesAnterior = new Date(
+            date.getFullYear(),
+            date.getMonth(),
+            0
+        ).getDate();
+        ageInDay += ultimoDiaMesAnterior;
+        ageInMonth--;
     }
 
     handleFieldValidation(
